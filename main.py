@@ -1,9 +1,6 @@
 def custom_reverse(string, char):
-    for i in range(len(string)):
-        if string[i] == char:
-            return string[:i] + string[i:][::-1]
-
-
+    i = string.index(char)
+    return string[:i] + string[i:][::-1]
 
 
 if __name__ == '__main__':
