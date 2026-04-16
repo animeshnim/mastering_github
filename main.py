@@ -19,22 +19,39 @@ def string_compress(string):
     return result_str
 
 
+def check_palindrome(string):
+    reverse_str = string[::-1]
+    
+    if (string == reverse_str):
+        return True
+    else:
+        return False
+
+
 if __name__ == '__main__':
     # Choice Screen:
     print("Choose the functionality you want to use")
     print("1. Reverse Second Half of the String at a Char")
     print("2. Compress the String")
-    func_to_run = input("Enter your choice (only numbers are allowed): ")
+    print("3. Check Palindrome")
+    func_to_run = int(input("Enter your choice (only numbers are allowed): "))
 
     if (func_to_run == 1):
         input_str = input("Enter a styring for custom input: ")
         input_chr = input("Reverse Character: ")
-
         print("The output is ", end="")
         print('"', custom_reverse(input_str, input_chr), '"', sep="")
     
-
-    elif (func_to_run == 1):
+    elif (func_to_run == 2):
         input_str = input("String to compress: ")
         print("The compressed string is ", end="")
         print('"', string_compress(input_str), '"', sep="")
+
+    
+    elif (func_to_run == 3):
+        input_str = input("Enter String to Check Palindrome: ")
+        output = check_palindrome(input_str)
+        if (output == True):
+            print("The string is a palindrome string")
+        else:
+            print("The string is not a palindrome string")
